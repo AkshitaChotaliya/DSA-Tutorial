@@ -1,0 +1,12 @@
+# Print Name n times using recursion
+class Name:
+    def getName(self,i:int,n:int) -> int:
+        if (i > n):
+            print("Test...Test...")
+            return self.getName(i+1,n)
+        else:
+            print("Not Test...")
+            
+sol = Name()
+print("Get Ans:",sol.getName(2,1))
+
