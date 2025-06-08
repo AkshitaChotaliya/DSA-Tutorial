@@ -26,5 +26,50 @@ class Name:
 sol = Name()
 sol.getName(5)
 
+# Parameterised and Functional Recursion
 
+print("Parameterised and Functional Recursion")
+
+class parameterised:
+    def getName(self, i: int, sum: int) -> None:
+      if i<1:
+        print("Sum is:", sum)
+        return
+      sum += i
+      self.getName(i-1,sum)
+
+# Reverse an array using recursion
+
+# arr = [1,3,2,4,4]
+
+# l and r is the index of array
+
+class ReverseArray:
+    def reverse(self,l:int,r:int,arr:list):
+        if l >= r:
+            return
+        arr[l], arr[r] = arr[r], arr[l]
+        self.reverse(l + 1, r - 1,arr)
+
+arr = [1, 3, 2, 4, 4]
+arrayGet = ReverseArray()
+# l(starting index) and r(ending index) is the index of array
+arrayGet.reverse(0, len(arr) - 1, arr)
+print("<===== ReverseArray =====>", arr)
+
+
+# Palindrome Check Using Recursion:
+
+class PalindromeCheck:
+    def is_palindrome(self, s: str, left: int, right: int) -> bool:
+        if left >= right:
+            return True
+        if s[left] != s[right]:
+            return False
+        return self.is_palindrome(s, left + 1, right - 1)
+
+word = "madam"
+checker = PalindromeCheck()
+result = checker.is_palindrome(word, 0, len(word) - 1)
+print(f"'{word}' is a palindrome? ->", result)
 
