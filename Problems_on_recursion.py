@@ -73,3 +73,40 @@ checker = PalindromeCheck()
 result = checker.is_palindrome(word, 0, len(word) - 1)
 print(f"'{word}' is a palindrome? ->", result)
 
+#  Multiple Recursion Calls
+
+class MultipleRecursion:
+    def fibonacci(self, n: int) -> int:
+        if n <= 0:
+            return 0
+        elif n == 1:
+            return 1
+        else:
+            return self.fibonacci(n - 1) + self.fibonacci(n - 2)
+        
+
+
+# Hashing | Maps | Time Complexity | Collisions | Division Rule of Hashing
+
+class HashingExample:
+    def getNumber(self,num:int,arr:list) -> int:
+        count = 0
+        for i in range(len(arr)):
+            if arr[i] == num:
+                count += 1
+        return count
+    
+    def getHash(self,arr:list) -> dict:
+        hash_map = {}
+        for num in arr:
+            if num in hash_map:
+                hash_map[num] += 1
+
+            else:
+                hash_map[num] = 1
+        return hash_map
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4]   
+data = HashingExample()
+result = data.getHash(arr)
+print("Frequencies:", result)
